@@ -33,8 +33,8 @@
     "61568791604271"
   ],
   "vipuser": [
-    "61580333625022",
-    "61568791604271"
+    "61580874687285",
+    "100078986277763"
   ],
   "reactBy": {
     "delete": ["🗑️", "❌", "😠", "😡", "😾"],
@@ -45,8 +45,8 @@
     "whiteListIds": [],
     "notes": "if you enable this feature, only the ids in the whiteListIds section can use the bot"
   },
-  "nickNameBot": "۝𝐶𝐻𝑅𝐼𝑆𝑇𝑈𝑆۝",
-  "prefix": "¥",
+  "nickNameBot": "🍒Projet Rahim",
+  "prefix": "*",
   "database": {
     "type": "mongodb",
     "uriMongodb": "mongodb+srv://Christus:voldigo225@cluster0.gykt2by.mongodb.net/?appName=Cluster0",
@@ -161,4 +161,4 @@
     "autoReconnect": false,
     "notes": "Document here: https://github.com/ntkhang03/fb-chat-api/blob/master/DOCS.md#apisetoptionsoptions "
   }
-  }
+}
