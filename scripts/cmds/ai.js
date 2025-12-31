@@ -170,7 +170,7 @@ const handleAIRequest = async (api, event, userInput, message, isReply = false) 
 
     let finalReply = textReply || '✅ AI Response:';
     finalReply = finalReply
-      .replace(/🎀\s*𝗦𝗵𝗶𝘇𝘂/gi, '🎀 𝗖𝗵𝗿𝗶𝘀𝘁𝘂𝘀')
+      .replace(/🍒\s*𝗦𝗵𝗶𝘇𝘂/gi, '🫰 𝑅𝑎ℎ𝑖𝑚 𝑷𝒓𝒐𝒋𝒆𝒕')
       .replace(/Shizu/gi, 'Christus')
       .replace(/Christuska/gi, 'Christus')
       .replace(/Aryan Chauhan/gi, 'Christus');
@@ -262,3 +262,4 @@ module.exports = {
     return await handleAIRequest(api, event, userInput, message);
   }
 };
+  
