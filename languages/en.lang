@@ -88,20 +88,20 @@ handlerCheckData.cantCreateUser=Les utilisateurs avec l’ID '%1' ne peuvent pas
 handlerEvents.userBanned=🚫 𝐕𝐨𝐮𝐬 𝐚𝐯𝐞𝐳 𝐞́𝐭𝐞́ 𝐛𝐚𝐧𝐧𝐢 𝐝𝐮 𝐛𝐨𝐭\n» 𝐑𝐚𝐢𝐬𝐨𝐧 : %1\n» 𝐇𝐞𝐮𝐫𝐞 : %2\n» 𝐈𝐃 𝐔𝐭𝐢𝐥𝐢𝐬𝐚𝐭𝐞𝐮𝐫 : %3
 handlerEvents.threadBanned=🚫 𝐂𝐞 𝐠𝐫𝐨𝐮𝐩𝐞 𝐚 𝐞́𝐭𝐞́ 𝐛𝐚𝐧𝐧𝐢 𝐝𝐮 𝐛𝐨𝐭\n» 𝐑𝐚𝐢𝐬𝐨𝐧 : %1\n» 𝐇𝐞𝐮𝐫𝐞 : %2\n» 𝐈𝐃 𝐆𝐫𝐨𝐮𝐩𝐞 : %3
 handlerEvents.onlyAdminBox=🔒 𝐂𝐞 𝐠𝐫𝐨𝐮𝐩𝐞 𝐞𝐬𝐭 𝐚𝐜𝐭𝐮𝐞𝐥𝐥𝐞𝐦𝐞𝐧𝐭 𝐫𝐞𝐬𝐞𝐫𝐯𝐞́ 𝐚𝐮𝐱 𝐚𝐝𝐦𝐢𝐧𝐢𝐬𝐭𝐫𝐚𝐭𝐞𝐮𝐫𝐬
-handlerEvents.onlyAdminBot=🙅 | 𝐒𝐞𝐮𝐥 𝐥’𝐚𝐝𝐦𝐢𝐧 𝐝𝐮 𝐛𝐨𝐭 𝐩𝐞𝐮𝐭 𝐮𝐭𝐢𝐥𝐢𝐬𝐞𝐫 𝐥𝐞 𝐛𝐨𝐭
+handlerEvents.onlyAdminBot=❌ | 𝐒𝐞𝐮𝐥 𝐥’𝐚𝐝𝐦𝐢𝐧 𝐝𝐮 𝐛𝐨𝐭 𝐩𝐞𝐮𝐭 𝐮𝐭𝐢𝐥𝐢𝐬𝐞𝐫 𝐥𝐞 𝐛𝐨𝐭
 handlerEvents.onlyDeveloperGlobal=⚙️ | 𝐒𝐞𝐮𝐥 𝐥𝐞 𝐝𝐞́𝐯𝐞𝐥𝐨𝐩𝐩𝐞𝐮𝐫 𝐝𝐮 𝐛𝐨𝐭 𝐞𝐭 𝐩𝐥𝐮𝐬 𝐩𝐞𝐮𝐯𝐞𝐧𝐭 𝐮𝐭𝐢𝐥𝐢𝐬𝐞𝐫 𝐥𝐞 𝐛𝐨𝐭
-handlerEvents.onlyVipUserGlobal=🙋| 𝐒𝐞𝐮𝐥𝐬 𝐥𝐞𝐬 𝐮𝐬𝐞𝐫𝐬 𝐕𝐈𝐏 𝐞𝐭 𝐩𝐥𝐮𝐬 𝐩𝐞𝐮𝐯𝐞𝐧𝐭 𝐮𝐭𝐢𝐥𝐢𝐬𝐞𝐫 𝐥𝐞 𝐛𝐨𝐭
-handlerEvents.commandNotFound=🙅 | 𝐋𝐚 𝐜𝐨𝐦𝐦𝐚𝐧𝐝𝐞 "%1" 𝐧’𝐞𝐱𝐢𝐬𝐭𝐞 𝐩𝐚𝐬, 𝐭𝐚𝐩𝐞𝐳 %2𝐡𝐞𝐥𝐩 𝐩𝐨𝐮𝐫 𝐯𝐨𝐢𝐫 𝐭𝐨𝐮𝐭𝐞𝐬 𝐥𝐞𝐬 𝐜𝐨𝐦𝐦𝐚𝐧𝐝𝐞𝐬
-handlerEvents.commandNotFound2=🙅 | 𝐋𝐚 𝐜𝐨𝐦𝐦𝐚𝐧𝐝𝐞 𝐪𝐮𝐞 𝐯𝐨𝐮𝐬 𝐮𝐭𝐢𝐥𝐢𝐬𝐞𝐳 𝐧’𝐞𝐱𝐢𝐬𝐭𝐞 𝐩𝐚𝐬, 𝐭𝐚𝐩𝐞𝐳 %1𝐡𝐞𝐥𝐩 𝐩𝐨𝐮𝐫 𝐯𝐨𝐢𝐫 𝐥𝐞𝐬 𝐜𝐨𝐦𝐦𝐚𝐧𝐝𝐞𝐬
+handlerEvents.onlyVipUserGlobal=💎 | 𝐒𝐞𝐮𝐥𝐬 𝐥𝐞𝐬 𝐮𝐬𝐞𝐫𝐬 𝐕𝐈𝐏 𝐞𝐭 𝐩𝐥𝐮𝐬 𝐩𝐞𝐮𝐯𝐞𝐧𝐭 𝐮𝐭𝐢𝐥𝐢𝐬𝐞𝐫 𝐥𝐞 𝐛𝐨𝐭
+handlerEvents.commandNotFound=❌ | 𝐋𝐚 𝐜𝐨𝐦𝐦𝐚𝐧𝐝𝐞 "%1" 𝐧’𝐞𝐱𝐢𝐬𝐭𝐞 𝐩𝐚𝐬, 𝐭𝐚𝐩𝐞𝐳 %2𝐡𝐞𝐥𝐩 𝐩𝐨𝐮𝐫 𝐯𝐨𝐢𝐫 𝐭𝐨𝐮𝐭𝐞𝐬 𝐥𝐞𝐬 𝐜𝐨𝐦𝐦𝐚𝐧𝐝𝐞𝐬
+handlerEvents.commandNotFound2=❌ | 𝐋𝐚 𝐜𝐨𝐦𝐦𝐚𝐧𝐝𝐞 𝐪𝐮𝐞 𝐯𝐨𝐮𝐬 𝐮𝐭𝐢𝐥𝐢𝐬𝐞𝐳 𝐧’𝐞𝐱𝐢𝐬𝐭𝐞 𝐩𝐚𝐬, 𝐭𝐚𝐩𝐞𝐳 %1𝐡𝐞𝐥𝐩 𝐩𝐨𝐮𝐫 𝐯𝐨𝐢𝐫 𝐥𝐞𝐬 𝐜𝐨𝐦𝐦𝐚𝐧𝐝𝐞𝐬
 
 # NEW KEY ADDED FOR SUGGESTION
 handlerEvents.commandNotFoundSuggestion=🧐 𝐋𝐚 𝐜𝐨𝐦𝐦𝐚𝐧𝐝𝐞 𝐪𝐮𝐞 𝐯𝐨𝐮𝐬 𝐮𝐭𝐢𝐥𝐢𝐬𝐞𝐳 𝐧’𝐞𝐱𝐢𝐬𝐭𝐞 𝐩𝐚𝐬.\n\n𝐕𝐨𝐮𝐥𝐢𝐞𝐳-𝐯𝐨𝐮𝐬 𝐝𝐢𝐫𝐞 %2%1 ?
 # END NEW KEY
 
 handlerEvents.commandSyntaxError=⚠️ | 𝐋𝐚 𝐜𝐨𝐦𝐦𝐚𝐧𝐝𝐞 𝐪𝐮𝐞 𝐯𝐨𝐮𝐬 𝐮𝐭𝐢𝐥𝐢𝐬𝐞𝐳 𝐩𝐨𝐬𝐬𝐞̀𝐝𝐞 𝐮𝐧𝐞 𝐦𝐚𝐮𝐯𝐚𝐢𝐬𝐞 𝐬𝐲𝐧𝐭𝐚𝐱𝐞, 𝐭𝐚𝐩𝐞𝐳 %1𝐡𝐞𝐥𝐩 %2 𝐩𝐨𝐮𝐫 𝐯𝐨𝐢𝐫 𝐜𝐨𝐦𝐦𝐞𝐧𝐭 𝐥’𝐮𝐭𝐢𝐥𝐢𝐬𝐞𝐫
-handlerEvents.onlyAdmin=🙅 | 𝐒𝐞𝐮𝐥𝐬 𝐥𝐞𝐬 𝐚𝐝𝐦𝐢𝐧𝐬 𝐝𝐮 𝐠𝐫𝐨𝐮𝐩𝐞 𝐩𝐞𝐮𝐯𝐞𝐧𝐭 𝐮𝐭𝐢𝐥𝐢𝐬𝐞𝐫 𝐥𝐚 𝐜𝐨𝐦𝐦𝐚𝐧𝐝𝐞 "%1"
-handlerEvents.onlyAdminToUseOnReply=🙅 | 𝐒𝐞𝐮𝐥𝐬 𝐥𝐞𝐬 𝐚𝐝𝐦𝐢𝐧𝐬 𝐩𝐞𝐮𝐯𝐞𝐧𝐭 𝐮𝐭𝐢𝐥𝐢𝐬𝐞𝐫 𝐥𝐚 𝐫𝐞𝐩𝐨𝐧𝐬𝐞 𝐝𝐞 "%1"
-handlerEvents.onlyAdminToUseOnReaction=🙅 | 𝐒𝐞𝐮𝐥𝐬 𝐥𝐞𝐬 𝐚𝐝𝐦𝐢𝐧𝐬 𝐩𝐞𝐮𝐯𝐞𝐧𝐭 𝐮𝐭𝐢𝐥𝐢𝐬𝐞𝐫 𝐥𝐚 𝐫𝐞𝐚𝐜𝐭𝐢𝐨𝐧 𝐝𝐞 "%1"
+handlerEvents.onlyAdmin=❌ | 𝐒𝐞𝐮𝐥𝐬 𝐥𝐞𝐬 𝐚𝐝𝐦𝐢𝐧𝐬 𝐝𝐮 𝐠𝐫𝐨𝐮𝐩𝐞 𝐩𝐞𝐮𝐯𝐞𝐧𝐭 𝐮𝐭𝐢𝐥𝐢𝐬𝐞𝐫 𝐥𝐚 𝐜𝐨𝐦𝐦𝐚𝐧𝐝𝐞 "%1"
+handlerEvents.onlyAdminToUseOnReply=❌ | 𝐒𝐞𝐮𝐥𝐬 𝐥𝐞𝐬 𝐚𝐝𝐦𝐢𝐧𝐬 𝐩𝐞𝐮𝐯𝐞𝐧𝐭 𝐮𝐭𝐢𝐥𝐢𝐬𝐞𝐫 𝐥𝐚 𝐫𝐞𝐩𝐨𝐧𝐬𝐞 𝐝𝐞 "%1"
+handlerEvents.onlyAdminToUseOnReaction=❌ | 𝐒𝐞𝐮𝐥𝐬 𝐥𝐞𝐬 𝐚𝐝𝐦𝐢𝐧𝐬 𝐩𝐞𝐮𝐯𝐞𝐧𝐭 𝐮𝐭𝐢𝐥𝐢𝐬𝐞𝐫 𝐥𝐚 𝐫𝐞𝐚𝐜𝐭𝐢𝐨𝐧 𝐝𝐞 "%1"
 handlerEvents.onlyAdminBot2=💫 | 𝐒𝐞𝐮𝐥𝐬 𝐥𝐞𝐬 𝐮𝐬𝐞𝐫𝐬 𝐕𝐈𝐏 𝐞𝐭 𝐩𝐥𝐮𝐬 𝐩𝐞𝐮𝐯𝐞𝐧𝐭 𝐮𝐭𝐢𝐥𝐢𝐬𝐞𝐫 𝐥𝐚 𝐜𝐨𝐦𝐦𝐚𝐧𝐝𝐞 "%1"
 handlerEvents.onlyAdminBot2ToUseOnReply=💫 | 𝐒𝐞𝐮𝐥𝐬 𝐥𝐞𝐬 𝐮𝐬𝐞𝐫𝐬 𝐕𝐈𝐏 𝐩𝐞𝐮𝐯𝐞𝐧𝐭 𝐮𝐭𝐢𝐥𝐢𝐬𝐞𝐫 𝐥𝐚 𝐫𝐞𝐩𝐨𝐧𝐬𝐞 𝐝𝐞 "%1"
 handlerEvents.onlyAdminBot2ToUseOnReaction=💫 | 𝐒𝐞𝐮𝐥𝐬 𝐥𝐞𝐬 𝐮𝐬𝐞𝐫𝐬 𝐕𝐈𝐏 𝐩𝐞𝐮𝐯𝐞𝐧𝐭 𝐮𝐭𝐢𝐥𝐢𝐬𝐞𝐫 𝐥𝐚 𝐫𝐞𝐚𝐜𝐭𝐢𝐨𝐧 𝐝𝐞 "%1"
@@ -117,10 +117,10 @@ handlerEvents.errorOccurred2=❌ [ %1 ]\n𝐔𝐧𝐞 𝐞𝐫𝐫𝐞𝐮𝐫 �
 handlerEvents.errorOccurred3=❌ [ %1 ]\n𝐄𝐫𝐫𝐞𝐮𝐫 𝐥𝐨𝐫𝐬 𝐝𝐞 𝐥’𝐞𝐱𝐞́𝐜𝐮𝐭𝐢𝐨𝐧 𝐝𝐞 onReply 𝐝𝐚𝐧𝐬 "%2"\n\n%3
 handlerEvents.errorOccurred4=❌ [ %1 ]\n𝐄𝐫𝐫𝐞𝐮𝐫 𝐥𝐨𝐫𝐬 𝐝𝐞 𝐥’𝐞𝐱𝐞́𝐜𝐮𝐭𝐢𝐨𝐧 𝐝𝐞 onReaction 𝐝𝐚𝐧𝐬 "%2"\n\n%3
 handlerEvents.errorOccurred5=❌ [ %1 ]\n𝐄𝐫𝐫𝐞𝐮𝐫 𝐥𝐨𝐫𝐬 𝐝𝐞 𝐥’𝐞𝐱𝐞́𝐜𝐮𝐭𝐢𝐨𝐧 𝐝𝐞 onEvent 𝐝𝐚𝐧𝐬 "%2"\n\n%3
-handlerEvents.errorOccurred6=❌ [ %1 ]\n𝙴𝚛𝚛𝚎𝚞𝚛 𝚕𝚘𝚛𝚜 𝚍𝚎 𝚕'𝚎𝚡𝚎𝚌𝚞𝚝𝚒𝚘𝚗 𝚍𝚎 onEvent 𝚍𝚊𝚗𝚜 "%2"\n\n%3
-handlerEvents.errorOccurred7=❌ [ %1 ]\n𝙴𝚛𝚛𝚎𝚞𝚛 𝚌𝚎𝚜 𝚙𝚛𝚘𝚍𝚞𝚒𝚝 𝚙𝚘𝚞𝚛 𝚕'𝚎𝚡𝚎𝚌𝚞𝚝𝚒𝚘𝚗 onAnyEvent 𝚍𝚊𝚗𝚜 "%2"\n\n%3
-handlerEvents.cannotFindCommandName=🙅𝙸𝚖𝚙𝚘𝚜𝚜𝚒𝚋𝚕𝚎 𝚍𝚎 𝚝𝚛𝚘𝚞𝚟𝚎𝚛 𝚕𝚎 𝚗𝚘𝚖 𝚍𝚎 𝚕𝚊 𝚌𝚖𝚍 𝚙𝚘𝚞𝚛 𝚎𝚡𝚎𝚌𝚞𝚝𝚎𝚛  𝚌𝚎𝚝𝚝𝚎 𝚛𝚎𝚙𝚘𝚗𝚜𝚎 !
-handlerEvents.cannotFindCommand=🙅 𝙸𝚖𝚙𝚘𝚜𝚜𝚒𝚋𝚕𝚎 𝚍𝚎 𝚝𝚛𝚘𝚞𝚟𝚎𝚛 𝚕𝚊 𝚌𝚖𝚍 "%1" pour exécuter cette réponse !
+handlerEvents.errorOccurred6=❌ [ %1 ]\n𝐄𝐫𝐫𝐞𝐮𝐫 𝐥𝐨𝐫𝐬 𝐝𝐞 𝐥’𝐞𝐱𝐞́𝐜𝐮𝐭𝐢𝐨𝐧 𝐝𝐞 onEvent 𝐝𝐚𝐧𝐬 "%2"\n\n%3
+handlerEvents.errorOccurred7=❌ [ %1 ]\n𝐄𝐫𝐫𝐞𝐮𝐫 𝐥𝐨𝐫𝐬 𝐝𝐞 𝐥’𝐞𝐱𝐞́𝐜𝐮𝐭𝐢𝐨𝐧 𝐝𝐞 onAnyEvent 𝐝𝐚𝐧𝐬 "%2"\n\n%3
+handlerEvents.cannotFindCommandName=❌ Impossible de trouver le nom de la commande pour exécuter cette réponse !
+handlerEvents.cannotFindCommand=❌ Impossible de trouver la commande "%1" pour exécuter cette réponse !
 
 # bot/autoUptime.js
 autoUptime.autoUptimeTurnedOn=Mode AutoUptime activé
@@ -150,7 +150,7 @@ updater.skipFile=Il existe une nouvelle version du fichier %1, mais vous avez ig
 verifyfbid.sendCode=Votre code de vérification est :\n%1\nLe code de vérification est valable pendant %2 minutes
 
 # utils.js
-utils.errorOccurred=🙅 𝚄𝚗𝚎 𝚎𝚛𝚛𝚎𝚞𝚛 𝚌𝚎𝚜 𝚙𝚛𝚘𝚍𝚞𝚒𝚝 :\n\n%1
+utils.errorOccurred=❌ Une erreur est survenue :\n\n%1
 
 # for command
 command.restartedBot=Le bot a été redémarré
@@ -162,4 +162,3 @@ app.notPermissionChangeFbstate=Vous n’avez pas la permission de modifier fbsta
 app.notFoundFbstate=Veuillez entrer fbstate !
 app.changedFbstateSuccess=fbstate modifié avec succès !
 app.serverError=Erreur du serveur, veuillez réessayer plus tard !
-
