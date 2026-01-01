@@ -1,120 +1,101 @@
-const fs = require("fs-extra");
-const axios = require("axios");
-const { utils } = global;
+const { getPrefix } = global.utils;
+const { commands, aliases } = global.GoatBot;
 
 module.exports = {
   config: {
-    name: "prefix",
-    version: "1.4",
-    author: "Aesther",
-    countDown: 5,
+    name: "help",
+    version: "3.6",
+    author: "Christus",
+    countDown: 2,
     role: 0,
-    shortDescription: "Thay đổi prefix của bot",
-    longDescription: "Thay đổi prefix của bot trong box chat hoặc toàn hệ thống",
-    category: "config",
-    guide: {
-      vi: "   {pn} <prefix>: đổi prefix trong box\n   {pn} <prefix> -g: đổi prefix toàn hệ thống (admin)\n   {pn} reset: reset về mặc định",
-      en: "   {pn} <prefix>: change local prefix\n   {pn} <prefix> -g: change global prefix (admin)\n   {pn} reset: reset to default"
-    }
+    shortDescription: { en: "Command list + details" },
+    category: "info",
+    guide: { en: "{pn}help <command> — show command details" },
   },
 
-  langs: {
-    vi: {
-      reset: "✅ Prefix của bạn đã được đặt lại về mặc định: %1",
-      onlyAdmin: "⚠️ Chỉ admin mới có thể thay đổi prefix toàn hệ thống!",
-      confirmGlobal: "📢 Hãy thả cảm xúc để xác nhận thay đổi prefix toàn hệ thống",
-      confirmThisThread: "📥 Thả cảm xúc để xác nhận thay đổi prefix nhóm này",
-      successGlobal: "✅ Đã thay đổi prefix hệ thống thành: %1",
-      successThisThread: "✅ Đã thay đổi prefix nhóm thành: %1",
-      myPrefix: "\nProjet-Rahim\n\n ➫𝗣𝗙 : [ %2 ]\n\n🌸 [𝗚𝗢𝗔𝗧𝗧𝗕𝗢𝗧-𝗩𝟮]\n☁️ 𝘼𝘿𝙈𝙄𝙉-𝙇𝙄𝙉𝙆: \n➤https://www.facebook.com/profile.php?id=61585449364508\n✦contact 𝗔𝗗𝗠𝗜𝗡✦"
-    },
-    en: {
-      reset: "✅ Your prefix has been reset to default: %1",
-      onlyAdmin: "⚠️ Only admin can change system prefix!",
-      confirmGlobal: "📢 React to confirm changing system prefix",
-      confirmThisThread: "📥 React to confirm changing your group prefix",
-      successGlobal: "✅ Global prefix changed to: %1",
-      successThisThread: "✅ Prefix changed in your chat to: %1",
-      myPrefix: "\nProject-Rahim\n\n ➫𝗣𝗙 : [ %2 ]\n\n🌸 [𝗚𝗢𝗔𝗧𝗧𝗕𝗢𝗧-𝗩𝟮]\n☁️ 𝘼𝘿𝙈𝙄𝙉-𝙇𝙄𝙉𝙆: \n➤https://www.facebook.com/profile.php?id=61585449364508\n✦contact 𝗔𝗗𝗠𝗜𝗡✦"
-    }
-  },
+  onStart: async function ({ message, args, event, usersData, role }) {
+    try {
+      const uid = event.senderID;
+      const prefix = getPrefix(event.threadID) || "";
 
-  onStart: async function ({ message, role, args, commandName, event, threadsData, getLang }) {
-    if (!args[0]) return message.SyntaxError();
-
-    // reset to default for this thread
-    if (args[0].toLowerCase() === 'reset') {
-      await threadsData.set(event.threadID, null, "data.prefix");
-      return message.reply(getLang("reset", global.GoatBot.config.prefix));
-    }
-
-    // detect -g flag and build newPrefix (allow spaces in prefix)
-    const setGlobal = args.includes('-g') || args.includes('--global');
-    const prefixParts = args.filter(a => a !== '-g' && a !== '--global');
-    if (prefixParts.length === 0) return message.SyntaxError();
-    const newPrefix = prefixParts.join(' ');
-
-    // permission check for global change (adjust role check if your framework uses other role values)
-    if (setGlobal && role !== 2) {
-      return message.reply(getLang("onlyAdmin"));
-    }
-
-    // send confirmation message and register reaction handler
-    const confirmText = getLang(setGlobal ? "confirmGlobal" : "confirmThisThread");
-    const info = await message.reply(confirmText);
-
-    const formSet = {
-      author: event.senderID,
-      newPrefix,
-      setGlobal
-    };
-
-    // ensure onReaction map exists
-    if (!global.GoatBot.onReaction) global.GoatBot.onReaction = new Map();
-    global.GoatBot.onReaction.set(info.messageID, formSet);
-
-    // auto-clean after 60s
-    setTimeout(() => {
+      // --- User profile ---
+      const record = (await usersData.get(uid)) || {};
+      let userInfo = {};
       try {
-        if (global.GoatBot.onReaction.has(info.messageID)) {
-          global.GoatBot.onReaction.delete(info.messageID);
-        }
-        if (typeof message.unsend === "function") {
-          message.unsend(info.messageID).catch(() => {});
-        }
-      } catch (e) {
-        // ignore errors
-      }
-    }, 60 * 1000);
-  },
+        const infoRaw = await (global.GoatBot.api?.getUserInfo ? global.GoatBot.api.getUserInfo(uid) : {});
+        userInfo = infoRaw?.[uid] || {};
+      } catch {}
+      let avatar = null;
+      try { avatar = await usersData.getAvatarUrl(uid); } catch {}
+      if (!avatar) avatar = "https://i.imgur.com/TPHk4Qu.png";
 
-  onReaction: async function ({ message, event, threadsData, Reaction, getLang }) {
-    const { author, newPrefix, setGlobal } = Reaction;
-    if (event.userID !== author)
-      return message.reply("⚠️ Seul l'utilisateur qui a lancé la commande peut confirmer.");
+      // --- If no args => list all commands ---
+      if (!args || args.length === 0) {
+        let body = "📜 𝐇𝐄𝐋𝐏 𝐌𝐄𝐍𝐔 📜\n━━━━━━━━━━━━\n\n";
 
-    if (setGlobal) {
-      global.GoatBot.config.prefix = newPrefix;
-      try {
-        fs.writeFileSync(global.client.dirConfig, JSON.stringify(global.GoatBot.config, null, 2));
-      } catch (err) {
-        console.error("Error saving config:", err);
+        // group commands by category
+        const cats = {};
+        for (let [name, cmd] of commands) {
+          if (cmd.config.role > 1 && role < cmd.config.role) continue;
+          const category = (cmd.config.category || "Misc").toString();
+          if (!cats[category]) cats[category] = [];
+          cats[category].push(name);
+        }
+
+        for (const category of Object.keys(cats).sort()) {
+          const list = cats[category].sort();
+          body += `📂 ${category.toUpperCase()}:\n`;
+          body += list.length ? list.map(c => `- ${prefix}${c}`).join("\n") : "No commands found";
+          body += "\n\n";
+        }
+
+        body += `💡 To get more info about a command: ${prefix}help <command>\n\n`;
+        body += "👤 𝐘𝐎𝐔𝐑 𝐏𝐑𝐎𝐅𝐈𝐋𝐄 👤\n━━━━━━━━━━━━\n";
+        body += `📝 Name: ${userInfo.name || record.name || "Unknown"}\n`;
+        body += `🆔 UID: ${uid}\n`;
+        body += `💰 Balance: ${record.money || 0}$\n`;
+        body += `⭐ Level: ${record.level || 0}\n`;
+        body += `📈 EXP: ${record.exp || 0}\n`;
+
+        return await message.reply({ body, attachment: await global.utils.getStreamFromURL(avatar) });
       }
-      return message.reply(getLang("successGlobal", newPrefix));
-    } else {
-      await threadsData.set(event.threadID, newPrefix, "data.prefix");
-      return message.reply(getLang("successThisThread", newPrefix));
+
+      // --- detailed command info ---
+      const query = args[0].toLowerCase();
+      const command = commands.get(query) || commands.get(aliases.get(query));
+      if (!command) return message.reply(`❌ Command "${query}" introuvable. Essayez ${prefix}help.`);
+
+      const cfg = command.config || {};
+      const roleString = {0:"Everyone",1:"Group Admins",2:"Bot Admins"}[cfg.role] || "Unknown";
+      const aliasTxt = Array.isArray(cfg.aliases) && cfg.aliases.length ? cfg.aliases.join(", ") : "—";
+      const desc = cfg.longDescription?.en || cfg.shortDescription?.en || "No description provided.";
+      const usageTemplate = (cfg.guide?.en || "{pn}" + cfg.name).replace(/{pn}/g, prefix);
+
+      const card = [
+        `📌 Command: ${prefix}${cfg.name}`,
+        `👤 Author: ${cfg.author || module.exports.config.author}`,
+        `📄 Version: ${cfg.version || "1.0"}`,
+        `🎯 Role: ${roleString}`,
+        `⏱ Cooldown: ${cfg.countDown || 1}s`,
+        `🔗 Aliases: ${aliasTxt}`,
+        `💡 Description: ${desc}`,
+        `📝 Usage: ${usageTemplate}`,
+      ].join("\n");
+
+      const profile = [
+        "👤 𝐘𝐎𝐔𝐑 𝐏𝐑𝐎𝐅𝐈𝐋𝐄 👤",
+        `📝 Name: ${userInfo.name || record.name || "Unknown"}`,
+        `🆔 UID: ${uid}`,
+        `💰 Balance: ${record.money || 0}$`,
+        `⭐ Level: ${record.level || 0}`,
+        `📈 EXP: ${record.exp || 0}`,
+      ].join("\n");
+
+      return await message.reply({ body: card + "\n\n" + profile, attachment: await global.utils.getStreamFromURL(avatar) });
+
+    } catch (err) {
+      console.error("HELP CMD ERROR:", err);
+      await message.reply(`⚠️ Une erreur est survenue: ${err.message || err}`);
     }
   },
-
-  onChat: async function ({ event, message, usersData, getLang }) {
-    if (event.body?.trim().toLowerCase() === "prefix") {
-      const user = await usersData.get(event.senderID);
-      const name = user?.name || "User";
-      return message.reply({
-        body: `🈷️ ${name} 🈷️` + getLang("myPrefix", global.GoatBot.config.prefix, utils.getPrefix(event.threadID)),
-        attachment: await global.utils.getStreamFromURL("https://i.postimg.cc/bw8gtkXy/20250818-070100.jpg")
-      });
-    }
-  }
 };
